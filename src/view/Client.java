@@ -34,9 +34,11 @@ public class Client
                 {
                     case 1->{
                         studentApplicationManager.sortByScoreAscending();
+                        displayStudent();
                     }
                     case 2 -> {
-                       studentApplicationManager.sortByScoreDescending();
+                        studentApplicationManager.sortByScoreDescending();
+                        displayStudent();
                     }
                     case 3 ->{
                         System.exit(3);
@@ -49,7 +51,7 @@ public class Client
                 System.out.println("Nhập dữ liệu không hợp lệ !");
             }
         }
-        while (result);
+        while (!result);
     }
 
 
