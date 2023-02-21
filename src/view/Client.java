@@ -86,7 +86,7 @@ public class Client
                     String gender = input.nextLine();
                     System.out.print("Student Address : ");
                     String address = input.nextLine();
-                    System.out.println("Student AverageScore :");
+                    System.out.print("Student AverageScore :");
                     double averageScore = Double.parseDouble(input.nextLine());
                     student.setName(studentName);
                     student.setStudentCode(studentCode);
@@ -162,13 +162,14 @@ public class Client
                 String gender = input.nextLine();
                 System.out.print("Student Address : ");
                 String address = input.nextLine();
-                System.out.println("Student AverageScore :");
+                System.out.print("Student AverageScore :");
                 double averageScore = Double.parseDouble(input.nextLine());
                 List<Student> studentList = studentApplicationManager.readFile();
                 if (studentList.size() == 0)
                 {
                     Student student = new Student(1,studentCode,studentName,age,gender,
                                                 address,averageScore);
+                    System.out.println("Thêm sinh viên thành công ! ");
                     studentApplicationManager.add(student);
                     result = true;
 
@@ -184,6 +185,10 @@ public class Client
                         System.out.println("Thêm sinh viên thành công ! ");
                         result = true;
                         StudentManager.studentDataStatus = true;
+                    }
+                    else
+                    {
+                        System.out.println("Sinh viên này đã tồn tại ! ");
                     }
                 }
 
